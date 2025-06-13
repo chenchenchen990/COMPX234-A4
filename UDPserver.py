@@ -50,3 +50,5 @@ def main():
 
         file_size = os.path.getsize(filename)
         print(f"Creating thread for '{filename}' to {client_address}")
+        threading.Thread(target=handle_file_transmission,
+                         args=(filename, client_address, file_size)).start()
