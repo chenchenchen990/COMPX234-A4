@@ -10,3 +10,9 @@ import sys
 import os
 import base64
 import random
+
+
+def main():
+    if len(sys.argv) != 2:
+        print("Usage: python UDPserver.py <port_number>")
+        sys.exit(1)
