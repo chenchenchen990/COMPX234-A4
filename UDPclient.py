@@ -25,3 +25,12 @@ def main():
     except ValueError:
         print("Error: Port number must be an integer")
         sys.exit(1)
+
+    files_list = sys.argv[3]
+
+    try:
+        with open(files_list, 'r') as f:
+            filenames = [line.strip() for line in f if line.strip()]
+    except FileNotFoundError:
+        print(f"Error: Cannot open file list '{files_list}'")
+        sys.exit(1)
