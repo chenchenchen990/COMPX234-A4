@@ -34,3 +34,8 @@ def main():
     except FileNotFoundError:
         print(f"Error: Cannot open file list '{files_list}'")
         sys.exit(1)
+
+    if not filenames:
+        print("Error: No files to download")
+        sys.exit(1)
+
