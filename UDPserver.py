@@ -69,5 +69,8 @@ def handle_file_transmission(filename, client_address, file_size):
         client_socket.sendto(ok_message.encode(), client_address)
         print(f"Sent OK response: {ok_message}")
 
+    with open(filename, 'rb') as file:
+        print(f"File '{filename}' opened for transmission")
+
 
 
