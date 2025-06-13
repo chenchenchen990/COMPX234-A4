@@ -48,3 +48,5 @@ def main():
         print("\nAll files downloaded successfully!")
     except Exception as e:
         print(f"Error: {e}")
+    finally:
+        client_socket.close()
