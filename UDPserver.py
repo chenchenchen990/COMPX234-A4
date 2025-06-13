@@ -33,3 +33,5 @@ def main():
     while True:
         request_buffer = bytearray(1024)
         bytes_received, client_address = welcome_socket.recvfrom_into(request_buffer)
+        client_request = request_buffer[:bytes_received].decode().strip()
+        print(f"Received: '{client_request}' from {client_address}")
