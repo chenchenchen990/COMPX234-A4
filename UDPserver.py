@@ -102,6 +102,12 @@ def handle_file_transmission(filename, client_address, file_size):
                 file.seek(start_byte)
                 file_data = file.read(bytes_to_read)
 
+                if file_data:
+                    base64_data = base64.b64encode(file_data).decode()
+                    data_response = f"FILE {filename} OK START {start_byte} END {end_byte} DATA {base64_data}"
+                    client_socket.sendto(data_response.encode(), sender_address)
+                    print(f"Thread: Sent data block {start_byte}-{end_byte}")
+
 
 
 
