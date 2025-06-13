@@ -18,3 +18,5 @@ def main():
     if len(sys.argv) != 4:
         print("Usage: python UDPclient.py <hostname> <port> <files_list>")
         sys.exit(1)
+
+    hostname = sys.argv[1]
