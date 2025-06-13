@@ -111,9 +111,13 @@ def handle_file_transmission(filename, client_address, file_size):
             except (ValueError, IndexError) as e:
                 print(f"Thread: Error processing request: {e}")
                 continue
-
         else:
             print(f"Thread: Unknown request format, ignoring")
+
+except Exception as e:
+    print(f"Error in file transmission thread: {e}")
+
+
 
 
 
