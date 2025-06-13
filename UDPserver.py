@@ -98,6 +98,12 @@ def handle_file_transmission(filename, client_address, file_size):
                     print(f"Thread: Invalid byte range {start_byte}-{end_byte}")
                     continue
 
+                bytes_to_read = end_byte - start_byte + 1
+                file.seek(start_byte)
+                file_data = file.read(bytes_to_read)
+
+
+
 
 
 
