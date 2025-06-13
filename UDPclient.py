@@ -20,3 +20,8 @@ def main():
         sys.exit(1)
 
     hostname = sys.argv[1]
+    try:
+        server_port = int(sys.argv[2])
+    except ValueError:
+        print("Error: Port number must be an integer")
+        sys.exit(1)
