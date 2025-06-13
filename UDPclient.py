@@ -40,3 +40,8 @@ def main():
         sys.exit(1)
 
     client_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+
+    try:
+        for filename in filenames:
+            print(f"\nDownloading file: {filename}")
+            download_file(client_socket, hostname, server_port, filename)
