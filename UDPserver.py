@@ -35,3 +35,8 @@ def main():
         bytes_received, client_address = welcome_socket.recvfrom_into(request_buffer)
         client_request = request_buffer[:bytes_received].decode().strip()
         print(f"Received: '{client_request}' from {client_address}")
+
+        parts = client_request.split(" ")
+        if len(parts) != 2 or parts[0] != "DOWNLOAD":
+            print(f"Invalid request from {client_address}, ignoring...")
+            continue
