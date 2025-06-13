@@ -40,3 +40,5 @@ def main():
         if len(parts) != 2 or parts[0] != "DOWNLOAD":
             print(f"Invalid request from {client_address}, ignoring...")
             continue
+
+        filename = parts[1]
