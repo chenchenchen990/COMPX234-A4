@@ -78,5 +78,7 @@ def handle_file_transmission(filename, client_address, file_size):
             client_request = request_buffer[:bytes_received].decode().strip()
             print(f"Thread: Received '{client_request}'")
 
+            parts = client_request.split(" ")
+
 
 
