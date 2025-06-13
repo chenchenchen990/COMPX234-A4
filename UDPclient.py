@@ -46,3 +46,5 @@ def main():
             print(f"\nDownloading file: {filename}")
             download_file(client_socket, hostname, server_port, filename)
         print("\nAll files downloaded successfully!")
+    except Exception as e:
+        print(f"Error: {e}")
