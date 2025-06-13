@@ -42,3 +42,8 @@ def main():
             continue
 
         filename = parts[1]
+        if not os.path.exists(filename):
+            error_message = f"ERR {filename} NOT_FOUND"
+            welcome_socket.sendto(error_message.encode(), client_address)
+            print(f"File '{filename}' not found, sent error")
+            continue
