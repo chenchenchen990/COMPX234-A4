@@ -72,5 +72,9 @@ def handle_file_transmission(filename, client_address, file_size):
     with open(filename, 'rb') as file:
         print(f"File '{filename}' opened for transmission")
 
+        while True:
+            request_buffer = bytearray(1024)
+            bytes_received, sender_address = client_socket.recvfrom_into(request_buffer)
+
 
 
