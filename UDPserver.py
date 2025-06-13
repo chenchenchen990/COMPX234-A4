@@ -47,3 +47,6 @@ def main():
             welcome_socket.sendto(error_message.encode(), client_address)
             print(f"File '{filename}' not found, sent error")
             continue
+
+        file_size = os.path.getsize(filename)
+        print(f"Creating thread for '{filename}' to {client_address}")
