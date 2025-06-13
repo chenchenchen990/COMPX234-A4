@@ -24,3 +24,8 @@ def main():
         sys.exit(1)
 
     welcome_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+
+    try:
+        welcome_socket.bind(('', server_port))
+        print(f"Server started on port {server_port}")
+        print("Waiting for download requests...")
