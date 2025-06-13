@@ -116,6 +116,9 @@ def handle_file_transmission(filename, client_address, file_size):
 
 except Exception as e:
     print(f"Error in file transmission thread: {e}")
+finally:
+    client_socket.close()
+    print(f"Thread: Socket closed, thread terminating")
 
 
 
