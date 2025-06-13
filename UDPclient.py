@@ -8,3 +8,5 @@ import socket
 import sys
 import os
 import base64
+
+INITIAL_TIMEOUT = 1000  # milliseconds
