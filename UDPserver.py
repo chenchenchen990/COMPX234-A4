@@ -61,6 +61,7 @@ def main():
 
 def handle_file_transmission(filename, client_address, file_size):
     data_port = random.randint(50000, 51000)
-    
+    client_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+
 
 
