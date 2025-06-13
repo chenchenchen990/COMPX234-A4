@@ -50,3 +50,8 @@ def main():
         print(f"Error: {e}")
     finally:
         client_socket.close()
+
+
+def download_file(sock, hostname, server_port, filename):
+    download_message = f"DOWNLOAD {filename}"
+
