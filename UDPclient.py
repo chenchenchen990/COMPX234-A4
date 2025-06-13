@@ -39,3 +39,4 @@ def main():
         print("Error: No files to download")
         sys.exit(1)
 
+    client_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
