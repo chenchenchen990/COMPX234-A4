@@ -108,6 +108,10 @@ def handle_file_transmission(filename, client_address, file_size):
                     client_socket.sendto(data_response.encode(), sender_address)
                     print(f"Thread: Sent data block {start_byte}-{end_byte}")
 
+            except (ValueError, IndexError) as e:
+                print(f"Thread: Error processing request: {e}")
+                continue
+
 
 
 
