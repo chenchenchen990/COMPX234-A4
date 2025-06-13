@@ -87,5 +87,9 @@ def handle_file_transmission(filename, client_address, file_size):
                 print(f"Thread: Sent close confirmation, terminating")
                 break
 
+            # Handle data request
+            elif (len(parts) == 7 and parts[0] == "FILE" and
+                  parts[2] == "GET" and parts[3] == "START" and parts[5] == "END"):
+
 
 
