@@ -29,3 +29,7 @@ def main():
         welcome_socket.bind(('', server_port))
         print(f"Server started on port {server_port}")
         print("Waiting for download requests...")
+
+    while True:
+        request_buffer = bytearray(1024)
+        bytes_received, client_address = welcome_socket.recvfrom_into(request_buffer)
