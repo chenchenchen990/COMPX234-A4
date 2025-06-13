@@ -16,9 +16,11 @@ def main():
     if len(sys.argv) != 2:
         print("Usage: python UDPserver.py <port_number>")
         sys.exit(1)
-        
+
     try:
         server_port = int(sys.argv[1])
     except ValueError:
         print("Error: Port number must be an integer")
         sys.exit(1)
+
+    welcome_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
