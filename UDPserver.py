@@ -80,5 +80,12 @@ def handle_file_transmission(filename, client_address, file_size):
 
             parts = client_request.split(" ")
 
+            # Handle close request
+            if len(parts) == 3 and parts[0] == "FILE" and parts[2] == "CLOSE":
+                close_response = f"FILE {filename} CLOSE_OK"
+                client_socket.sendto(close_response.encode(), sender_address)
+                print(f"Thread: Sent close confirmation, terminating")
+                break
+
 
 
