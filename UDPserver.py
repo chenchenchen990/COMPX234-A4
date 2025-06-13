@@ -75,6 +75,8 @@ def handle_file_transmission(filename, client_address, file_size):
         while True:
             request_buffer = bytearray(1024)
             bytes_received, sender_address = client_socket.recvfrom_into(request_buffer)
+            client_request = request_buffer[:bytes_received].decode().strip()
+            print(f"Thread: Received '{client_request}'")
 
 
 
