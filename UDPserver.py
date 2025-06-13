@@ -63,5 +63,11 @@ def handle_file_transmission(filename, client_address, file_size):
     data_port = random.randint(50000, 51000)
     client_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
+    try:
+        client_socket.bind(('', data_port))
+        ok_message = f"OK {filename} SIZE {file_size} PORT {data_port}"
+        client_socket.sendto(ok_message.encode(), client_address)
+        print(f"Sent OK response: {ok_message}")
+
 
 
