@@ -55,3 +55,5 @@ def main():
 def download_file(sock, hostname, server_port, filename):
     download_message = f"DOWNLOAD {filename}"
 
+    try:
+        response = send_and_receive(sock, hostname, server_port, download_message)
