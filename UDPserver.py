@@ -94,6 +94,12 @@ def handle_file_transmission(filename, client_address, file_size):
                     start_byte = int(parts[4])
                     end_byte = int(parts[6])
 
+                if start_byte < 0 or end_byte >= file_size or start_byte > end_byte:
+                    print(f"Thread: Invalid byte range {start_byte}-{end_byte}")
+                    continue
+
+
+
 
 
 
