@@ -45,3 +45,4 @@ def main():
         for filename in filenames:
             print(f"\nDownloading file: {filename}")
             download_file(client_socket, hostname, server_port, filename)
+        print("\nAll files downloaded successfully!")
