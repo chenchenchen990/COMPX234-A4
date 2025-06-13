@@ -52,3 +52,15 @@ def main():
         print(f"Creating thread for '{filename}' to {client_address}")
         threading.Thread(target=handle_file_transmission,
                          args=(filename, client_address, file_size)).start()
+
+    except Exception as e:
+        print(f"Server error: {e}")
+    finally:
+        welcome_socket.close()
+
+
+def handle_file_transmission(filename, client_address, file_size):
+    data_port = random.randint(50000, 51000)
+    
+
+
