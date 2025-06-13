@@ -112,6 +112,10 @@ def handle_file_transmission(filename, client_address, file_size):
                 print(f"Thread: Error processing request: {e}")
                 continue
 
+        else:
+            print(f"Thread: Unknown request format, ignoring")
+
+
 
 
 
