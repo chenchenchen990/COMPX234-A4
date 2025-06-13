@@ -10,3 +10,5 @@ import os
 import base64
 
 INITIAL_TIMEOUT = 1000  # milliseconds
+MAX_RETRIES = 5
+CHUNK_SIZE = 1000
