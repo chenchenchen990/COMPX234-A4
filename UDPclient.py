@@ -84,3 +84,5 @@ def download_file_content(sock, hostname, data_port, filename, file_size):
             while bytes_downloaded < file_size:
                 start_byte = bytes_downloaded
                 end_byte = min(start_byte + CHUNK_SIZE - 1, file_size - 1)
+                file_request = f"FILE {filename} GET START {start_byte} END {end_byte}"
+
