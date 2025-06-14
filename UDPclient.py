@@ -57,3 +57,4 @@ def download_file(sock, hostname, server_port, filename):
 
     try:
         response = send_and_receive(sock, hostname, server_port, download_message)
+        parts = response.split(" ")
