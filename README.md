@@ -15,7 +15,7 @@ COMPX234-A4/
 ├── Server/               # Files to serve
 │   ├── 07.pdf           # Test PDF file 1
 │   ├── 08.pdf           # Test PDF file 2
-│   └── IM-NZ.mov        # Test video file
+│   └── IM-NZ.mp4        # Test video file
 ├── Client/               # Download destination
 └── README.md
 ```
