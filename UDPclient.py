@@ -133,3 +133,7 @@ def send_and_receive(sock, hostname, port, message):
             response_buffer = bytearray(4096)
             bytes_received, server_address = sock.recvfrom_into(response_buffer)
             return response_buffer[:bytes_received].decode().strip()
+
+        except socket.timeout:
+            print(f"Timeout on attempt {attempt + 1}, retrying...")
+            current_timeout *= 2
