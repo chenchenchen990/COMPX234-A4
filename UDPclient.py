@@ -69,3 +69,5 @@ def download_file(sock, hostname, server_port, filename):
             data_port = int(parts[5])
             print(f"File size: {file_size} bytes, Data port: {data_port}")
             download_file_content(sock, hostname, data_port, filename, file_size)
+        else:
+            print(f"Unexpected response format: {response}")
