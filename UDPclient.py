@@ -67,3 +67,4 @@ def download_file(sock, hostname, server_port, filename):
                 parts[2] == "SIZE" and parts[4] == "PORT"):
             file_size = int(parts[3])
             data_port = int(parts[5])
+            print(f"File size: {file_size} bytes, Data port: {data_port}")
