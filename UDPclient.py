@@ -80,3 +80,7 @@ def download_file_content(sock, hostname, data_port, filename, file_size):
         with open(filename, 'wb') as file:
             bytes_downloaded = 0
             print(f"Progress: ", end='', flush=True)
+
+            while bytes_downloaded < file_size:
+                start_byte = bytes_downloaded
+                end_byte = min(start_byte + CHUNK_SIZE - 1, file_size - 1)
