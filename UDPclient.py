@@ -124,3 +124,5 @@ def download_file_content(sock, hostname, data_port, filename, file_size):
 
 def send_and_receive(sock, hostname, port, message):
     current_timeout = INITIAL_TIMEOUT
+
+    for attempt in range(MAX_RETRIES):
