@@ -71,3 +71,5 @@ def download_file(sock, hostname, server_port, filename):
             download_file_content(sock, hostname, data_port, filename, file_size)
         else:
             print(f"Unexpected response format: {response}")
+    except Exception as e:
+        print(f"Error downloading file '{filename}': {e}")
