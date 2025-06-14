@@ -126,3 +126,6 @@ def send_and_receive(sock, hostname, port, message):
     current_timeout = INITIAL_TIMEOUT
 
     for attempt in range(MAX_RETRIES):
+        try:
+            sock.settimeout(current_timeout / 1000.0)
+            sock.sendto(message.encode(), (hostname, port))
