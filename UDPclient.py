@@ -137,3 +137,7 @@ def send_and_receive(sock, hostname, port, message):
         except socket.timeout:
             print(f"Timeout on attempt {attempt + 1}, retrying...")
             current_timeout *= 2
+        except Exception as e:
+            print(f"Error on attempt {attempt + 1}: {e}")
+            if attempt < MAX_RETRIES - 1:
+                current_timeout *= 2
