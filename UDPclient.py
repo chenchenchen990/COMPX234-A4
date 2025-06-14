@@ -120,3 +120,7 @@ def download_file_content(sock, hostname, data_port, filename, file_size):
 
     except Exception as e:
         print(f"Error creating/writing file '{filename}': {e}")
+
+
+def send_and_receive(sock, hostname, port, message):
+    current_timeout = INITIAL_TIMEOUT
