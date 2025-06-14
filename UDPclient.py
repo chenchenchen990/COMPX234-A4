@@ -129,3 +129,7 @@ def send_and_receive(sock, hostname, port, message):
         try:
             sock.settimeout(current_timeout / 1000.0)
             sock.sendto(message.encode(), (hostname, port))
+
+            response_buffer = bytearray(4096)
+            bytes_received, server_address = sock.recvfrom_into(response_buffer)
+            return response_buffer[:bytes_received].decode().strip()
