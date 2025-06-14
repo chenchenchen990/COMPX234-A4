@@ -58,3 +58,7 @@ def download_file(sock, hostname, server_port, filename):
     try:
         response = send_and_receive(sock, hostname, server_port, download_message)
         parts = response.split(" ")
+
+        if len(parts) >= 3 and parts[0] == "ERR" and parts[2] == "NOT_FOUND":
+            print(f"Error: File '{filename}' not found on server")
+            return
