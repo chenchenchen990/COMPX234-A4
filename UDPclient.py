@@ -141,3 +141,5 @@ def send_and_receive(sock, hostname, port, message):
             print(f"Error on attempt {attempt + 1}: {e}")
             if attempt < MAX_RETRIES - 1:
                 current_timeout *= 2
+
+    raise Exception(f"Failed to send/receive after {MAX_RETRIES} attempts")
