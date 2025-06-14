@@ -93,3 +93,6 @@ def download_file_content(sock, hostname, data_port, filename, file_size):
                         data_start_index = response.find("DATA ") + 5
                         base64_data = response[data_start_index:].strip()
                         file_data = base64.b64decode(base64_data)
+
+                        file.seek(start_byte)
+                        file.write(file_data)
