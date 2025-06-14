@@ -104,3 +104,5 @@ def download_file_content(sock, hostname, data_port, filename, file_size):
                 except Exception as e:
                     print(f"\nError receiving data chunk {start_byte}-{end_byte}: {e}")
                     break
+
+            print(f"\nFile '{filename}' downloaded successfully ({bytes_downloaded} bytes)")
