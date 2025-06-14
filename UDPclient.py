@@ -115,3 +115,5 @@ def download_file_content(sock, hostname, data_port, filename, file_size):
                     print(f"File '{filename}' transfer completed")
                 else:
                     print(f"Unexpected close response: {close_response}")
+            except Exception as e:
+                print(f"Error sending close request: {e}")
