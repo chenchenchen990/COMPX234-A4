@@ -62,3 +62,8 @@ def download_file(sock, hostname, server_port, filename):
         if len(parts) >= 3 and parts[0] == "ERR" and parts[2] == "NOT_FOUND":
             print(f"Error: File '{filename}' not found on server")
             return
+
+        if (len(parts) == 6 and parts[0] == "OK" and
+                parts[2] == "SIZE" and parts[4] == "PORT"):
+            file_size = int(parts[3])
+            data_port = int(parts[5])
