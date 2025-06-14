@@ -76,3 +76,5 @@ def download_file(sock, hostname, server_port, filename):
 
 
 def download_file_content(sock, hostname, data_port, filename, file_size):
+    try:
+        with open(filename, 'wb') as file:
