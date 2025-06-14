@@ -96,3 +96,5 @@ def download_file_content(sock, hostname, data_port, filename, file_size):
 
                         file.seek(start_byte)
                         file.write(file_data)
+                        bytes_downloaded = end_byte + 1
+                        print("*", end='', flush=True)
