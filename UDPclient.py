@@ -109,3 +109,5 @@ def download_file_content(sock, hostname, data_port, filename, file_size):
 
             # Send closing request
             close_request = f"FILE {filename} CLOSE"
+            try:
+                close_response = send_and_receive(sock, hostname, data_port, close_request)
