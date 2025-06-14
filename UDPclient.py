@@ -111,3 +111,5 @@ def download_file_content(sock, hostname, data_port, filename, file_size):
             close_request = f"FILE {filename} CLOSE"
             try:
                 close_response = send_and_receive(sock, hostname, data_port, close_request)
+                if close_response == f"FILE {filename} CLOSE_OK":
+                    print(f"File '{filename}' transfer completed")
