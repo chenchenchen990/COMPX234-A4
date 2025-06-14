@@ -143,3 +143,7 @@ def send_and_receive(sock, hostname, port, message):
                 current_timeout *= 2
 
     raise Exception(f"Failed to send/receive after {MAX_RETRIES} attempts")
+
+
+if __name__ == "__main__":
+    main()
